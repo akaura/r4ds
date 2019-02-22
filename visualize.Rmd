@@ -390,6 +390,11 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 
 You can use the same idea to specify different `data` for each layer. Here, our smooth line displays just a subset of the `mpg` dataset, the subcompact cars. The local data argument in `geom_smooth()` overrides the global data argument in `ggplot()` for that layer only.
 
+The below code gives an error:
+
+NAs introduced by coercionNAs introduced by coercionNAs introduced by coercionNAs introduced by coercionNAs introduced by coercionNAs introduced by coercionError in class == "subcompact" : 
+  comparison (1) is possible only for atomic and list types
+
 ```{r, message = FALSE}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
   geom_point(mapping = aes(color = class)) + 
